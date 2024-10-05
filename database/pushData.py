@@ -3,11 +3,11 @@ from imports import *
 
 load_dotenv()
 
-def insert_detection_data(torpdeo_id, c_x, c_y, w, h, cam_id):
+def insert_detection_data(torpedo_id, c_x, c_y, w, h, cam_id, filename):
     torpdeo_id = int(torpdeo_id)
     c_x = int(c_x)
     c_y = int(c_y)
-    w = int(x)
+    w = int(w)
     h = int(h)
     cam_id = int(cam_id)
     
@@ -40,7 +40,8 @@ def insert_detection_data(torpdeo_id, c_x, c_y, w, h, cam_id):
         "width": w,
         "height": h,
         "udt": udt,
-        "CameraID": cam_id
+        "CameraID": cam_id,
+        "filename":filename
     }
     
     insert_query = """
@@ -57,7 +58,8 @@ def insert_detection_data(torpdeo_id, c_x, c_y, w, h, cam_id):
             data["width"],
             data["height"],
             data["udt"],
-            data["CameraID"]
+            data["CameraID"],
+            data["filename"]
         ))
 
         conn.commit()

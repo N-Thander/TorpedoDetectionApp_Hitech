@@ -1,5 +1,5 @@
 
-# temp detection app 
+# old code from temp detection app 
 
 import pyodbc
 import datetime

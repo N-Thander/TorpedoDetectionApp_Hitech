@@ -5,7 +5,7 @@ def runScript():
     scriptPath = ""
     
     while True:
-        process - subprocess.Popen(["python", scriptPath], stdout-subprocess.PIPE, stderr=subprocess.PIPE)
+        process = subprocess.Popen(["python", scriptPath], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         
         try:
             for line in process.stdout:

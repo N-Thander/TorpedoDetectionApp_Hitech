@@ -1,7 +1,7 @@
 
 from imports import *
 
-def saveImage(src, dst, TorpdeoID):
+def saveImage(src, dst_path, TorpdeoID):
     try:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"Cam1_{timestamp}_{TorpdeoID}.jpg"
