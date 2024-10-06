@@ -7,12 +7,12 @@ from components.detectTorpedo import *
 from components.findLatestImage import *
 from components.calculateBBoxInfo import *
 
-cam2_raw = ""
+cam2_raw = "images\\cam2.jpg"
 
 images_cam2 = "images_cam2"
 temp_cam2 = "temp_cam2"
 
-image_name = f"cam2_{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}.jpg"
+image_name = f"cam2_{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}.jpg"
 
 cls_model_path = "models\\cam2_classify.pt"
 detection_model_path = "models\\cam2_detect.pt"
@@ -33,7 +33,7 @@ def cam2():
         return c_x, c_y, w, h
     
     else:
-        pass
+        return None
     
     
     

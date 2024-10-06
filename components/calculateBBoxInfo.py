@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath('TorpedoDetectionApp_Hitech')))
 
 
 def calculateBBoxInfo(x1, y1, x2, y2):

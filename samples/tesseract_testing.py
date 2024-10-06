@@ -1,5 +1,6 @@
 
-# ocr testing 
+# tesseract ocr testing
+# performace metics worse than easy ocr 
 
 import cv2
 import numpy as np

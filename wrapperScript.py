@@ -2,7 +2,7 @@
 from imports import *
 
 def runScript():
-    scriptPath = ""
+    scriptPath = "main.py"
     
     while True:
         process = subprocess.Popen(["python", scriptPath], stdout=subprocess.PIPE, stderr=subprocess.PIPE)

@@ -13,7 +13,7 @@ cam3_raw = ""
 images_cam3 = "images_cam3"
 temp_cam3 = "temp_cam3"
 
-image_name = f"cam3_{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}.jpg"
+image_name = f"cam3_{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}.jpg"
 
 cls_model_path = "models\\cam3_classify.pt"
 detection_model_path = "models\\cam3_detect.pt"
@@ -34,7 +34,7 @@ def cam3():
         return c_x, c_y, w, h
     
     else:
-        pass
+        return None
     
     
     

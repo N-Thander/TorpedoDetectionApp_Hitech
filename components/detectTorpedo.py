@@ -1,12 +1,17 @@
 
-from imports import *
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath('TorpedoDetectionApp_Hitech')))
 
+from imports import *
 
 def detectTorpedo(detectModelPath, imagePath):
     detectModel = YOLO(detectModelPath)
     
     results = detectModel(imagePath)
-    if not results("No bounding box"):
+    
+    if not results:
+        print("No bounding box")
         return None
     
     for result in results:

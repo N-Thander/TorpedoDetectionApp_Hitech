@@ -1,4 +1,8 @@
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath('TorpedoDetectionApp_Hitech')))
+
 from imports import *
 from components.makeCopy import *
 from components.deleteFiles import *
@@ -7,15 +11,15 @@ from components.detectTorpedo import *
 from components.findLatestImage import *
 from components.calculateBBoxInfo import *
 
-cam1_raw = ""
+cam1_raw = "images\\cam1.jpg"
 
 images_cam1 = "images_cam1"
 temp_cam1 = "temp_cam1"
 
-image_name = f"cam1_{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}.jpg"
+image_name = f"cam1_{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}.jpg"
 
-cls_model_path = "models\\cam1_classify.pt"
-detection_model_path = "models\\cam1_detect.pt"
+cls_model_path = "models\\cam2_classify.pt"
+detection_model_path = "models\\cam2_detect.pt"
 
 
 def cam1():
@@ -31,9 +35,8 @@ def cam1():
         c_x, c_y, w, h = calculateBBoxInfo(x1, y1, x2, y2)
         makeCopy(image, images_cam1, image_name)
         return c_x, c_y, w, h
-    
     else:
-        pass
+        return "-99"
     
     
     

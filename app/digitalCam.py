@@ -5,14 +5,14 @@ from components.makeCopy import *
 from components.deleteFiles import *
 from components.findLatestImage import *
 
-rtsp_streaming_image = ""
+rtsp_streaming_image = "images\\digital_image.jpg"
 
 temp_digital = "temp_digital"
 images_digital = "images_digital"
 
 clsModelPath =  "models\digitalcam_cls.pt"
 
-save_image_name = f"{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}.jpg"
+save_image_name = f"digitalcam_{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}.jpg"
 
 def digitalCam():
     deleteFiles(temp_digital)
