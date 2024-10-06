@@ -13,11 +13,12 @@ from components.makeCopy import *
 from components.saveImage import *
 
 rtsp_stream = "testing_images\digital_image.jpg"
-digital_temp = "images_digital"
-images_digital = "temp_digital"
 
-temp_filename = f"Temp_digitalImage.jpg"
-final_filename = f"DigitalCam_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
+images_digital = "images_digital"
+digital_temp = "temp_digital"
+
+temp_filename = f"temp_digitalImage.jpg"
+final_filename = f"digitalCam_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
 
 cls_model_path = "models\digitalcam_cls.pt"
 
