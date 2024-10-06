@@ -1,10 +1,12 @@
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath('TorpedoDetectionApp_Hitech')))
+
 from imports import *
 
-def saveImage(src, dst_path, TorpdeoID):
+def saveImage(src, dst_path, filename):
     try:
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"Cam1_{timestamp}_{TorpdeoID}.jpg"
         dst = os.path.join(dst_path, filename)
 
         shutil.copy2(src, dst)
@@ -12,3 +14,4 @@ def saveImage(src, dst_path, TorpdeoID):
         
     except Exception as e:
         print(f"Error: {e}")
+        

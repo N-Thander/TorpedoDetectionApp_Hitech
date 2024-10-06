@@ -1,20 +1,21 @@
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath('TorpedoDetectionApp_Hitech')))
+
 from imports import *
 
-def findLatestImage(dir_path):
+def findLatestImagePath(dir_path):
     image_extensions = ('*.jpg', '*.jpeg', '*.png')
-    
     image_files = []
     
     for ext in image_extensions:
-        image_files.extend(glob.glob(os.path.join(dir_path)))
-        
+        image_files.extend(glob.glob(os.path.join(dir_path, ext)))
+    
     if not image_files:
         print("No images found in the directory")
         return None
     
     latest_image = max(image_files, key=os.path.getatime)
-    
-    print(f"Latest Image: {latest_image}")
     
     return latest_image

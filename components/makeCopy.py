@@ -1,16 +1,16 @@
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath('TorpedoDetectionApp_Hitech')))
+
 from imports import *
 
 def makeCopy(src, dst_path, filename):
     try:
-        if not os.path.exists(dst_path):
-            os.makedirs(dst_path)
-        
-        dst_file = os.path.join(dst_path, filename)
-        shutil.copy2(src, dst_path)
-        
-        print(f"file copied succesfully to {dst_path} with name {dst_file}")
+        dst = os.path.join(dst_path, filename)
+
+        shutil.copy2(src, dst)
+        print(f"Image saved to {dst}")
         
     except Exception as e:
-        print(f"Error occured while copying file: {e}")
-        pass
+        print(f"Error: {e}")

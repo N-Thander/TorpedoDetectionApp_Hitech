@@ -16,7 +16,8 @@ from components.calculateBBoxInfo import *
 from components.clsTorpedo import *
 from components.deleteFiles import *
 from components.detectTorpedo import *
-from components.findLatestImage import *
+from components.findLatestImageName import *
+from components.findLatestImagePath import *
 from components.makeCopy import *
 from components.saveImage import *
 
