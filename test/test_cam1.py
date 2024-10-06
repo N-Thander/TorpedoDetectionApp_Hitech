@@ -13,7 +13,8 @@ def test_cam1():
             print("No Detection")
         else:
             print(f"Center_x: {c_x}\nCenter_y: {c_y}\nWidth: {w}\nHeight: {h}")
-            print('Cam1 is working')
+            
+        print('Cam1 is working')
     except Exception as e:
         print(f"Exception: {e}")
 
