@@ -1,29 +1,33 @@
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath('TorpedoDetectionApp_Hitech')))
+
 from imports import *
+
 from components.clsTorpedo import *
-from components.makeCopy import *
 from components.deleteFiles import *
-from components.findLatestImage import *
+from components.findLatestImageName import *
+from components.findLatestImagePath import *
+from components.makeCopy import *
+from components.saveImage import *
 
-rtsp_streaming_image = "images\\digital_image.jpg"
+rtsp_stream = "testing_images\digital_image.jpg"
+digital_temp = "images_digital"
+images_digital = "temp_digital"
 
-temp_digital = "temp_digital"
-images_digital = "images_digital"
+temp_filename = f"Temp_digitalImage.jpg"
+final_filename = f"DigitalCam_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
 
-clsModelPath =  "models\digitalcam_cls.pt"
-
-save_image_name = f"digitalcam_{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}.jpg"
+cls_model_path = "models\digitalcam_cls.pt"
 
 def digitalCam():
-    deleteFiles(temp_digital)
-    makeCopy(rtsp_streaming_image, temp_digital, save_image_name)
-    digital_image_path = findLatestImage(temp_digital)
-    isTorpedo = clsTorpedo(clsModelPath, digital_image_path)
-    
+    deleteFiles(digital_temp)
+    makeCopy(rtsp_stream, digital_temp, temp_filename)
+    temp_image_path = findLatestImagePath(digital_temp)
+    isTorpedo = clsTorpedo(cls_model_path, temp_image_path)
     if isTorpedo:
-        makeCopy(digital_image_path, images_digital, save_image_name)
-        return isTorpedo
+        saveImage(temp_image_path, images_digital, final_filename)
+        return True
     else:
-        return None
-    
-    
+        return False
