@@ -12,7 +12,7 @@ from components.findLatestImagePath import *
 from components.makeCopy import *
 from components.saveImage import *
 
-rtsp_stream = "testing_images\digital_image.jpg"
+rtsp_stream = "images_rtsp\\rtsp_image.jpg"
 
 images_digital = "images_digital"
 digital_temp = "temp_digital"
