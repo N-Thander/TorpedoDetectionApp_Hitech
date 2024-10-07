@@ -1,28 +1,21 @@
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath('TorpedoDetectionApp_Hitech')))
+
 from imports import *
 
-def runScript():
-    scriptPath = "main.py"
-    
+def wrapperScript():
     while True:
-        process = subprocess.Popen(["python", scriptPath], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        
         try:
-            for line in process.stdout:
-                print(line.decode().strip())
-            for line in process.stderr:
-                print(line.decode().strip(), file=sys.stderr)
-                
+            process = subprocess.Popen(['python', 'main.py'])
             process.wait()
             
-            if process.returncode != 0:
-                print()
-        except KeyboardInterrupt:
-            break
-        
+        except Exception as e:
+            print(f"Error running main.py: {e}")
+            
         finally:
-            process.terminate()
-            process.wait()
+            time.sleep(2)
             
 if __name__ == "__main__":
-    runScript()
+    wrapperScript()

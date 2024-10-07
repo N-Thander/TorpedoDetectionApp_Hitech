@@ -20,8 +20,8 @@ stream_images_cam1 = "testing_images\cam2.jpg"
 images_cam1 = "images_cam1"
 temp_cam1 = "temp_cam1"
 
-cls_model_path_cam1 = "models\cam2_classify.pt"
-detect_model_path_cam1 = "models\cam2_detect.pt"
+cls_model_path_cam1 = ""
+detect_model_path_cam1 = ""
 
 temp_filename = f"temp_cam1.jpg"
 final_filename = f"cam1_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
