@@ -1,9 +1,13 @@
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath('TorpedoDetectionApp_Hitech')))
+
 from imports import *
 
 load_dotenv()
 
-def insert_detection_data(torpedo_id, c_x, c_y, w, h, cam_id, filename):
+def pushData(torpedo_id, c_x, c_y, w, h, cam_id, filename):
     torpdeo_id = int(torpdeo_id)
     c_x = int(c_x)
     c_y = int(c_y)
