@@ -20,3 +20,26 @@ stream_images_cam2 = ""
 images_cam2 = ""
 temp_cam2 = ""
 
+cls_model_path_cam2 = ""
+detect_model_path_cam2 = ""
+
+temp_filename = f"temp_cam2.jpg"
+final_filename = f"cam2_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
+
+
+def cam2():
+    deleteFiles(temp_cam2)
+    makeCopy(stream_images_cam2, temp_cam2, temp_filename)
+    temp_image_cam2 = findLatestImagePath(temp_cam2)
+    torpedoInframe = clsTorpedo(cls_model_path_cam2, temp_image_cam2)
+    
+    if torpedoInframe:
+        x1, y1, x2, y2 = detectTorpedo(detect_model_path_cam2, temp_cam2)
+        
+        if x1 == None:
+            print("Detect Torpedo Returned None")
+            return -99, -99, -99, -99
+        else:
+            saveImage(temp_image_cam2, images_cam2, final_filename)
+            c_x, c_y, w, h = calculateBBoxInfo(x1, y1, x2, y2)
+            return c_x, c_y, w, h
