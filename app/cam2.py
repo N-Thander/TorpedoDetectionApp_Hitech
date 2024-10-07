@@ -26,7 +26,6 @@ detect_model_path_cam2 = ""
 temp_filename = f"temp_cam2.jpg"
 final_filename = f"cam2_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
 
-
 def cam2():
     deleteFiles(temp_cam2)
     makeCopy(stream_images_cam2, temp_cam2, temp_filename)

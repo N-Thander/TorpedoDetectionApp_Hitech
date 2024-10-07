@@ -17,7 +17,6 @@ from components.saveImage import *
 
 
 stream_images_cam1 = "testing_images\cam2.jpg"
-
 images_cam1 = "images_cam1"
 temp_cam1 = "temp_cam1"
 
